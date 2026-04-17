@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,71 +6,32 @@
 
 @layer base {
   :root {
-    /* Base Colors */
-    --background: 46 68% 94%;
-    --foreground: 189 54% 32%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
 
-    /* Main Colors - Turquoise Blue */
-    --primary: 189 54% 32%;
-    --primary-foreground: 46 68% 94%;
-
-    /* Secondary Colors - Beige */
-    --secondary: 46 68% 86%;
-    --secondary-foreground: 189 54% 32%;
-
-    /* Accent Colors - Orange */
-    --accent: 21 98% 65%;
-    --accent-foreground: 0 0% 100%;
-
-    /* Supporting Colors - Reddish Brown */
-    --tertiary: 15 52% 52%;
-    --tertiary-foreground: 0 0% 100%;
-
-    /* UI Element Colors */
-    --muted: 189 54% 95%;
-    --muted-foreground: 189 54% 40%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 189 54% 32%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 189 54% 32%;
-
-    --border: 46 68% 86%;
-    --input: 189 54% 95%;
-    --ring: 21 98% 65%;
-
-    --radius: 0.75rem;
-  }
-
-  .dark {
-    --background: 189 54% 15%;
-    --foreground: 0 0% 100%;
-
-    --primary: 189 54% 32%;
+    --primary: 263 70% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 46 68% 86%;
-    --secondary-foreground: 189 54% 32%;
+    --secondary: 240 6% 10%;
+    --secondary-foreground: 0 0% 85%;
 
-    --accent: 21 98% 65%;
+    --accent: 263 70% 58%;
     --accent-foreground: 0 0% 100%;
 
-    --tertiary: 15 52% 52%;
-    --tertiary-foreground: 0 0% 100%;
+    --muted: 240 6% 14%;
+    --muted-foreground: 240 5% 55%;
 
-    --muted: 189 54% 25%;
-    --muted-foreground: 215 20.2% 75%;
+    --card: 240 6% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --card: 189 54% 20%;
-    --card-foreground: 0 0% 100%;
+    --popover: 240 6% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --popover: 189 54% 20%;
-    --popover-foreground: 0 0% 100%;
+    --border: 240 6% 16%;
+    --input: 240 6% 16%;
+    --ring: 263 70% 58%;
 
-    --border: 189 54% 30%;
-    --input: 189 54% 30%;
-    --ring: 46 68% 86%;
+    --radius: 0.75rem;
   }
 }
 
@@ -82,101 +43,36 @@
   html {
     -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
-    /* Prevent pull-to-refresh on mobile */
     overscroll-behavior-y: none;
-    /* Enable smooth scrolling on Safari iOS */
     -webkit-overflow-scrolling: touch;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Poppins", "Noto Sans JP", sans-serif;
-    /* Improve mobile text rendering */
+    font-family: "Inter", "Noto Sans JP", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Prevent unwanted text size adjustment */
     text-size-adjust: 100%;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
 }
 
-@layer components {
-  .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16;
-  }
-
-  .section-title {
-    @apply text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-primary;
-  }
-
-  .card {
-    @apply bg-white/95 dark:bg-primary/10 backdrop-blur-sm rounded-lg shadow-lg p-4 sm:p-6 border border-secondary/20 hover:border-accent/30 transition-all duration-300;
-  }
-
-  .nav-link {
-    @apply text-primary hover:text-accent transition-colors duration-200 px-3 py-2 rounded-md text-sm sm:text-base;
-  }
-
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-accent transition-colors duration-200 rounded-lg px-4 py-2 shadow-md hover:shadow-lg text-sm sm:text-base disabled:opacity-50;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary text-primary hover:bg-accent hover:text-white transition-colors duration-200 rounded-lg px-4 py-2 shadow-md hover:shadow-lg text-sm sm:text-base disabled:opacity-50;
-  }
-}
-
-/* Mobile Touch Improvements */
 @layer utilities {
   .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;
   }
-
-  .touch-action-none {
-    touch-action: none;
-  }
-
-  /* Improve mobile scrolling */
-  .smooth-scroll {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Prevent text selection during touch interactions */
-  .no-select {
-    -webkit-user-select: none;
-    user-select: none;
-  }
 }
 
-/* Mobile-specific optimizations */
 @media (max-width: 640px) {
-
-  /* Improve touch targets */
-  button,
-  a {
+  button, a {
     min-height: 44px;
     min-width: 44px;
   }
 
-  /* Optimize mobile forms */
-  input,
-  select,
-  textarea {
+  input, select, textarea {
     font-size: 16px;
-    /* Prevent zoom on iOS */
-  }
-
-  /* Improve scrolling performance */
-  * {
-    -webkit-overflow-scrolling: touch;
   }
 }

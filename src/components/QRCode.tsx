@@ -1,11 +1,10 @@
-import { Card } from "@/components/ui/card";
 import { Share2 } from "lucide-react";
 
 const QRCode = () => {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-16">
-        <Card className="max-w-md mx-auto p-6">
+      <div className="max-w-md mx-auto px-4 py-16">
+        <div className="rounded-xl bg-card border border-border p-6">
           <div className="flex items-center justify-center gap-2 mb-6">
             <Share2 className="w-6 h-6 text-primary" />
             <h1 className="text-2xl font-bold text-center">
@@ -29,14 +28,14 @@ const QRCode = () => {
             Scan to visit{" "}
             <a
               href="https://o6ivp.github.io/profile/"
-              className="text-primary hover:text-accent"
+              className="text-primary hover:text-primary/80"
               target="_blank"
               rel="noopener noreferrer"
             >
               https://o6ivp.github.io/profile/
             </a>
           </p>
-        </Card>
+        </div>
       </div>
     </div>
   );

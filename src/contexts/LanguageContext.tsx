@@ -8,194 +8,141 @@ interface LanguageContextType {
   t: (key: string) => string;
 }
 
-const translations = {
+const translations: Record<Language, Record<string, string>> = {
   en: {
-    // Navigation
     "nav.about": "About",
     "nav.skills": "Skills",
-    "nav.projects": "Projects",
-    "nav.research": "Research",
+    "nav.experience": "Experience",
     "nav.contact": "Contact",
 
-    // About Section
-    "about.title": "Software Engineer",
-    "about.description":
-      "Full-stack developer with experience in IoT solutions and web application development. Graduate of National Defense Academy with a strong foundation in engineering principles. Currently focusing on cloud-native development and seeking international opportunities.",
-    "about.age": "years old",
-    "about.location": "Japan",
-    "about.remote": "Remote Work Available",
+    "about.title": "About Me",
+    "about.description.1":
+      "Software engineer working across frontend, backend, and data infrastructure. Day-to-day I build BI platforms and e-commerce data systems using React, Go, Python, and dbt on Snowflake / BigQuery / Redshift.",
+    "about.description.2":
+      "I typically work on multiple client projects at the same time, sometimes solo, sometimes as part of a team.",
+    "about.description.3":
+      "Open to remote work and international collaboration.",
 
-    // Skills Section
-    "skills.title": "Technical Skills",
-    "skills.languages": "Programming Languages",
-    "skills.frameworks": "Frameworks",
-    "skills.databases": "Databases",
-    "skills.cloud": "Cloud Services (AWS)",
-    "skills.tools": "Tools",
-    "skills.years": "years",
+    "skills.title": "Skills & Technologies",
+    "skills.frontend": "Frontend",
+    "skills.backend": "Backend",
+    "skills.data": "Data Engineering",
+    "skills.infrastructure": "Infrastructure",
 
-    // Projects Section
-    "projects.title": "Projects",
-    "projects.attendance.title": "Attendance Management System",
-    "projects.attendance.description":
-      "Shift generation and attendance management application",
-    "projects.attendance.role": "Full-stack Developer",
-    "projects.attendance.responsibilities.1":
-      "Led end-to-end development from requirements to testing",
-    "projects.attendance.responsibilities.2":
-      "Designed and implemented serverless architecture with AWS",
-    "projects.attendance.responsibilities.3":
-      "Built authentication system using Cognito",
-    "projects.attendance.responsibilities.4":
-      "Developed full-stack application with React frontend and Go backend",
+    "experience.title": "Experience",
 
-    "projects.iot.title": "IoT Sensor Evaluation System",
-    "projects.iot.description": "Real-time sensor data analysis system",
-    "projects.iot.role": "Backend Developer",
-    "projects.iot.responsibilities.1":
-      "Developed sensor data processing system in C++",
-    "projects.iot.responsibilities.2": "Created RESTful API using Flask",
-    "projects.iot.responsibilities.3":
-      "Implemented real-time monitoring dashboard with Grafana",
-    "projects.iot.responsibilities.4":
-      "Designed and implemented MySQL database architecture",
+    "experience.ante.role": "Data Platform Engineer (Solo)",
+    "experience.ante.company": "Data Analytics Platform",
+    "experience.ante.period": "2025–",
+    "experience.ante.description":
+      "dbt modeling, ingestion pipelines, and Streamlit dashboards on Snowflake.",
 
-    "projects.vpn.title": "VPN System Implementation",
-    "projects.vpn.description": "WireGuard VPN system on Ubuntu",
-    "projects.vpn.role": "Infrastructure Engineer",
-    "projects.vpn.responsibilities.1":
-      "Architected and implemented WireGuard VPN solution",
-    "projects.vpn.responsibilities.2": "Optimized security configurations",
-    "projects.vpn.responsibilities.3":
-      "Established comprehensive system monitoring",
+    "experience.levitt.role": "Full-Stack Developer (Team)",
+    "experience.levitt.company": "Hospitality BI Platform",
+    "experience.levitt.period": "2025",
+    "experience.levitt.description":
+      "Worked as part of a team on a hospitality BI platform — frontend, backend, scraping, Dataform, and reporting. React + FastAPI + BigQuery.",
 
-    "projects.responsibilities": "Responsibilities",
-    "projects.tech": "Technologies",
+    "experience.anw.role": "Data & Integration Engineer (Team)",
+    "experience.anw.company": "E-Commerce Data Platform",
+    "experience.anw.period": "2025–",
+    "experience.anw.description":
+      "Built data pipelines connecting EC malls, logistics systems, and analytics dashboards.",
 
-    // Research Section
-    "research.title": "Research Experience",
-    "research.project.title": "Drowsiness Prevention System Research",
-    "research.project.subtitle":
-      "National Defense Academy - Graduation Research Project",
-    "research.project.overview": "Project Overview",
-    "research.project.description":
-      "Developed a system to detect and prevent drowsiness by monitoring environmental conditions and user state using multiple sensors and computer vision techniques.",
-    "research.project.implementation": "Technical Implementation",
-    "research.implementation.1":
-      "Integration of multiple sensors (CO2, distance, infrared) with Raspberry Pi",
-    "research.implementation.2":
-      "Implementation of I2C communication protocol for sensor data collection",
-    "research.implementation.3":
-      "Development of eye detection and tracking system using OpenCV and dlib",
-    "research.implementation.4":
-      "Implementation of machine learning algorithms for drowsiness detection",
-    "research.project.tech": "Technologies Used",
-    "research.tech.stack":
-      "Python, OpenCV, dlib, Raspberry Pi, I2C, CO2 Sensor, Distance Sensor, Infrared Sensor, TensorFlow",
-    "research.details": "Details",
-    // "research.details.item1":"https://github.com/squiffer9/drosiness_detection",
-    "research.details.description1":
-      "              This repository contains the source code and documentation for the drowsiness detection system, including \
-              sensor integration, computer vision algorithms, and machine learning models.",
-    "research.details.description2": "* Sorry, I'll renew it gradually.",
+    "experience.yst.role": "Full-Stack Developer (Solo)",
+    "experience.yst.company": "Brand Analytics Platform",
+    "experience.yst.period": "2025–26",
+    "experience.yst.description":
+      "Built a brand analytics platform from scratch — ingestion, dbt transformations, and a dashboard frontend.",
 
-    // Contact Section
+    "experience.shinonome.role": "Full-Stack Developer",
+    "experience.shinonome.company": "Cloud Infrastructure Platform",
+    "experience.shinonome.period": "2025",
+    "experience.shinonome.description":
+      "Designed and built an inquiry system end-to-end with Clean Architecture on Next.js + Go/Gin. Also handled Terraform-based infra management.",
+
+    "experience.attendance.role": "Full-Stack Developer",
+    "experience.attendance.company": "Attendance Management System",
+    "experience.attendance.period": "2024",
+    "experience.attendance.description":
+      "Serverless shift scheduling and attendance app on AWS (Lambda, API Gateway, Cognito, DynamoDB). React frontend, Go backend.",
+
+    "experience.research.role": "Researcher",
+    "experience.research.company": "National Defense Academy — Graduation Research",
+    "experience.research.period": "2023",
+    "experience.research.description":
+      "Built a drowsiness prevention system with Raspberry Pi, multiple sensors, and OpenCV. Real-time detection using machine learning.",
+
     "contact.title": "Contact",
     "contact.message":
-      "I'm open to remote work opportunities and international collaboration. Feel free to reach out!",
-    "contact.email": "Email",
-    "contact.github": "GitHub",
-    "contact.linkedin": "LinkedIn",
+      "Open to remote work and international collaboration. Feel free to reach out.",
   },
   ja: {
-    // Navigation
     "nav.about": "概要",
     "nav.skills": "スキル",
-    "nav.projects": "プロジェクト",
-    "nav.research": "研究",
+    "nav.experience": "経歴",
     "nav.contact": "連絡先",
 
-    // About Section
-    "about.title": "ソフトウェアエンジニア",
-    "about.description":
-      "IoTソリューションとWebアプリケーション開発を経験しました。現在はクラウドネイティブ開発に注力しており、AWSの知見を増やしたいと考えています。",
-    "about.age": "歳",
-    "about.location": "日本",
-    "about.remote": "リモートワーク可能",
+    "about.title": "About Me",
+    "about.description.1":
+      "フロントエンド・バックエンド・データ基盤を横断して開発しています。普段はBIプラットフォームやECのデータ連携が多く、React、Go、Python、dbt（Snowflake / BigQuery / Redshift）あたりを使っています。",
+    "about.description.2":
+      "複数のクライアント案件を並行して進めていて、ソロのこともチームのこともあります。",
+    "about.description.3": "リモートワーク・国際的な協業の機会を歓迎します。",
 
-    // Skills Section
-    "skills.title": "技術スキル",
-    "skills.languages": "プログラミング言語",
-    "skills.frameworks": "フレームワーク",
-    "skills.databases": "データベース",
-    "skills.cloud": "クラウドサービス（AWS）",
-    "skills.tools": "ツール",
-    "skills.years": "年",
+    "skills.title": "Skills & Technologies",
+    "skills.frontend": "フロントエンド",
+    "skills.backend": "バックエンド",
+    "skills.data": "データエンジニアリング",
+    "skills.infrastructure": "インフラ",
 
-    // Projects Section
-    "projects.title": "プロジェクト実績",
-    "projects.attendance.title": "勤怠管理システム",
-    "projects.attendance.description":
-      "シフト生成機能付き勤怠管理アプリケーション",
-    "projects.attendance.role": "フルスタック開発者",
-    "projects.attendance.responsibilities.1":
-      "要件定義から実装、テストまでの全工程を担当",
-    "projects.attendance.responsibilities.2":
-      "AWSを活用したサーバーレスアーキテクチャの設計と実装",
-    "projects.attendance.responsibilities.3": "認証システムの実装（Cognito）",
-    "projects.attendance.responsibilities.4":
-      "フロントエンド（React）とバックエンド（Go）の開発",
+    "experience.title": "Experience",
 
-    "projects.iot.title": "IoTセンサー評価システム",
-    "projects.iot.description": "リアルタイムセンサーデータ分析システム",
-    "projects.iot.role": "バックエンド開発者",
-    "projects.iot.responsibilities.1":
-      "C++によるセンサーデータ処理システムの開発",
-    "projects.iot.responsibilities.2": "Flaskを使用したAPI開発",
-    "projects.iot.responsibilities.3": "Grafanaによるダッシュボード構築",
-    "projects.iot.responsibilities.4": "MySQLデータベース設計と実装",
+    "experience.ante.role": "データ基盤エンジニア（単独）",
+    "experience.ante.company": "データ分析プラットフォーム",
+    "experience.ante.period": "2025–",
+    "experience.ante.description":
+      "dbtモデリング・取り込みパイプライン・StreamlitダッシュボードをSnowflake上で構築・運用。",
 
-    "projects.vpn.title": "VPNシステム構築",
-    "projects.vpn.description": "Ubuntu上でのWireGuard VPNシステム構築",
-    "projects.vpn.role": "インフラエンジニア",
-    "projects.vpn.responsibilities.1": "WireGuard VPNの設計と実装",
-    "projects.vpn.responsibilities.2": "セキュリティ設定の最適化",
-    "projects.vpn.responsibilities.3": "システム監視の構築",
+    "experience.levitt.role": "フルスタック開発者（チーム）",
+    "experience.levitt.company": "ホスピタリティBIプラットフォーム",
+    "experience.levitt.period": "2025",
+    "experience.levitt.description":
+      "ホスピタリティBIプラットフォームでFE・BE・スクレイピング・Dataform・レポートの5領域を横断して開発。React + FastAPI + BigQuery構成。",
 
-    "projects.responsibilities": "担当業務",
-    "projects.tech": "使用技術",
+    "experience.anw.role": "データ＆連携エンジニア（チーム）",
+    "experience.anw.company": "ECデータプラットフォーム",
+    "experience.anw.period": "2025–",
+    "experience.anw.description":
+      "ECモール・物流システム・分析ダッシュボードの間をつなぐデータパイプラインと連携基盤を構築。",
 
-    // Research Section
-    "research.title": "卒業研究",
-    "research.project.title": "居眠り防止システムの基礎研究",
-    "research.project.subtitle":
-      "授業中の居眠りと二酸化炭素濃度、室温、体表面温度、瞬きの回数の関係のリアルタイム分析",
-    "research.project.overview": "プロジェクト概要",
-    "research.project.description":
-      "環境条件とユーザーの状態を複数のセンサーとコンピュータビジョンを用いてモニタリングし、居眠りを検知・防止するシステムを開発。",
-    "research.project.implementation": "技術実装",
-    "research.implementation.1":
-      "Raspberry Piを使用した複数センサー（CO2、距離、赤外線）の統合",
-    "research.implementation.2": "I2C通信プロトコルの実装",
-    "research.implementation.3": "OpenCVとdlibを使用した目の検出システム開発",
-    "research.implementation.4": "機械学習アルゴリズムの適用",
-    "research.project.tech": "使用技術",
-    "research.tech.stack":
-      "Python, OpenCV, dlib, Raspberry Pi, I2C, CO2センサー, 測距センサー, 赤外線センサー, TensorFlow",
-    "research.details": "詳細",
-    // "research.details.item1":  "https://github.com/squiffer9/drosiness_detection",
-    "research.details.description1":
-      "このリポジトリには、センサー統合、コンピュータビジョンアルゴリズム、機械学習モデルなど、居眠り検知システムのソースコードとドキュメントが含まれています。",
-    "research.details.description2":
-      "* すみません、当時のものは恥ずかしいので順次リニューアルします。",
+    "experience.yst.role": "フルスタック開発者（単独）",
+    "experience.yst.company": "ブランド分析プラットフォーム",
+    "experience.yst.period": "2025–26",
+    "experience.yst.description":
+      "ブランド分析プラットフォームをゼロから一人で構築。データ取り込みからdbt変換、ダッシュボードまで。",
 
-    // Contact Section
+    "experience.shinonome.role": "フルスタック開発者",
+    "experience.shinonome.company": "クラウドインフラ管理プラットフォーム",
+    "experience.shinonome.period": "2025",
+    "experience.shinonome.description":
+      "Next.js + Go/Ginのプラットフォームで、Clean Architectureに沿ったお問い合わせ機能の設計・実装。Terraformによるインフラ管理も担当。",
+
+    "experience.attendance.role": "フルスタック開発者",
+    "experience.attendance.company": "勤怠管理システム",
+    "experience.attendance.period": "2024",
+    "experience.attendance.description":
+      "シフト生成・勤怠管理アプリをAWSサーバーレス構成（Lambda / API Gateway / Cognito / DynamoDB）で設計・開発。React + Go。",
+
+    "experience.research.role": "リサーチャー",
+    "experience.research.company": "防衛大学校 — 卒業研究",
+    "experience.research.period": "2023",
+    "experience.research.description":
+      "Raspberry Piと複数センサー、OpenCVを使った居眠り防止システムを開発。機械学習でリアルタイム検知。",
+
     "contact.title": "連絡先",
     "contact.message":
-      "リモートワークや国際的な協業の機会を探しています。お気軽にご連絡ください。",
-    "contact.email": "メール",
-    "contact.github": "GitHub",
-    "contact.linkedin": "LinkedIn",
+      "リモートワークや国際的な協業の機会を歓迎します。お気軽にご連絡ください。",
   },
 };
 
@@ -206,7 +153,12 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguage] = useState<Language>("ja");
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof navigator !== "undefined" && navigator.language.startsWith("ja")) {
+      return "ja";
+    }
+    return "en";
+  });
 
   const t = (key: string): string => {
     return translations[language][key] || key;
